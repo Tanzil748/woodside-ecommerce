@@ -23,9 +23,11 @@ const Register = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="mb-3">
           Sign Up
         </Button>
+        <p className="mb-0">Already have an account?</p>
+        <a href="/signin">Sign In</a>
       </Form>
     </Container>
   );
