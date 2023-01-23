@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/navbar.css";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BsCart4 } from "react-icons/bs";
@@ -8,7 +7,7 @@ import { BsCart4 } from "react-icons/bs";
 const NavComponent = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Container fluid>
+      <div className="container-fluid">
         <div>
           <Navbar.Brand href="#">Woodside Bazaar</Navbar.Brand>
         </div>
@@ -36,7 +35,7 @@ const NavComponent = () => {
             </Nav>
           </Navbar.Collapse>
         </div>
-      </Container>
+      </div>
     </Navbar>
   );
 };
