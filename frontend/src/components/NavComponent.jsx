@@ -4,12 +4,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BsCart4 } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavComponent = () => {
   return (
     <Navbar bg="light" expand="lg">
       <div className="container-fluid px-3">
-        <Navbar.Brand className="fw-bolder" href="/">
+        <Navbar.Brand className="fw-bolder" href="/home">
           Woodside Bazaar
         </Navbar.Brand>
         <Nav
@@ -17,8 +18,11 @@ const NavComponent = () => {
           style={{ maxHeight: "100px" }}
           navbarScroll
         ></Nav>
-        <div className="d-flex gap-4 align-items-center">
-          <NavDropdown title="Account" id="navbarScrollingDropdown">
+        <div className="d-flex gap-2 align-items-center">
+          <NavDropdown
+            title={<FaUserCircle size={30} color="gray" />}
+            id="navbarScrollingDropdown"
+          >
             <NavDropdown.Item href="/signin">Sign In</NavDropdown.Item>
             <NavDropdown.Item href="/register">Register</NavDropdown.Item>
           </NavDropdown>

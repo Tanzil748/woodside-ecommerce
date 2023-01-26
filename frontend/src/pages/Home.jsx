@@ -1,14 +1,14 @@
 import React from "react";
 import Categories from "../components/Categories";
 import HomeCarasoul from "../components/HomeCarasoul";
-import NavComponent from "../components/NavComponent";
+import ProductSection from "../components/ProductSection";
 
 const Home = () => {
   return (
     <div>
-      <NavComponent />
       <HomeCarasoul />
       <Categories />
+      <ProductSection />
     </div>
   );
 };
