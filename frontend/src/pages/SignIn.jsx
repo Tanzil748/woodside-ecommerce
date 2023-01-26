@@ -8,7 +8,7 @@ const SignIn = () => {
     <Container>
       <Form
         className="d-flex flex-column align-items-center justify-content-center"
-        style={{ height: "100vh" }}
+        style={{ height: "75vh" }}
       >
         <h1>Sign In</h1>
         <Form.Group className="mb-3">
