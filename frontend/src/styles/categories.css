@@ -53,8 +53,13 @@
   margin-top: 10px;
 }
 
-/* fixes spacing between two columns at this breakpoint */
 @media (min-width: 768px) and (max-width: 1260px) {
+  /* this prevents part of the box thats overflowing from being seen */
+  .bigBox {
+    overflow-x: hidden;
+  }
+
+  /* fixes spacing between two columns at this breakpoint */
   .bigBox img {
     width: 700px;
     height: 460px;
@@ -76,5 +81,11 @@
   .smallBox {
     position: relative;
     width: auto;
+  }
+
+  .bigBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 }
