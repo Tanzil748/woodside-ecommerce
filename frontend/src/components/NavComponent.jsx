@@ -8,8 +8,8 @@ import { FaUserCircle } from "react-icons/fa";
 
 const NavComponent = () => {
   return (
-    <Navbar expand="lg" className="navComponent">
-      <div className="container-fluid px-3">
+    <Navbar expand="lg" className="navComponent px-2 pt-3">
+      <div className="container-xxl px-3">
         <Navbar.Brand className="fw-bolder text-white" href="/">
           <span className="title1">Woodside</span> Bazaar
         </Navbar.Brand>

@@ -1,0 +1,80 @@
+.customAlignment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bigBox {
+  position: relative;
+}
+
+.bigBoxText {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+.bigBoxText a {
+  text-decoration: none;
+}
+
+.bigBox img {
+  width: 700px;
+  height: 460px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.categoryBtn {
+  background-color: brown;
+}
+
+.smallBox {
+  position: relative;
+  width: 49%;
+}
+
+.smallBoxText {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.smallBoxText a {
+  text-decoration: none;
+}
+
+.smallBox img {
+  height: 225px;
+  width: 305px;
+  margin-top: 10px;
+}
+
+/* fixes spacing between two columns at this breakpoint */
+@media (min-width: 768px) and (max-width: 1260px) {
+  .bigBox img {
+    width: 700px;
+    height: 460px;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
+/* fixes alignment at this breakpoint */
+@media (min-width: 630px) and (max-width: 767px) {
+  .customAlignment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .smallBox {
+    position: relative;
+    width: auto;
+  }
+}

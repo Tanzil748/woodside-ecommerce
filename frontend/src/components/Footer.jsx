@@ -3,8 +3,8 @@ import "../styles/footer.css";
 
 const Footer = () => {
   return (
-    <div className="footerComponent ">
-      <div className="container-xxl d-flex justify-content-between px-4 pt-2 text-white">
+    <div className="footerComponent">
+      <div className="container-xxl d-flex justify-content-between px-4 pt-1 text-white">
         <div className="lh-1">
           <h4>Address</h4>
           <p>1234 Fruit Ave, NY</p>
