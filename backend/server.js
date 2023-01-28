@@ -3,12 +3,12 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5500;
 const connectMongo = require("./connect");
+const itemsRoute = require("./routes/itemsRoute");
 
 connectMongo();
 
 app.use(express.json());
-app.use("/", (req, res) => {
-  res.send("Testing if works");
-});
+
+app.use("/api/v1/items", itemsRoute);
 
 app.listen(port, () => console.log(`Backend running on port ${port}`));
