@@ -1,0 +1,14 @@
+.imgContainer {
+  min-height: 206px;
+  position: relative;
+}
+
+.buttonPosition {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btnDesign {
+  background-color: green;
+}
