@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/categories.css";
-import Button from "react-bootstrap/button";
 
 const Categories = () => {
   return (
@@ -17,10 +15,9 @@ const Categories = () => {
                   className="img-fluid rounded-1"
                 />
                 <div className="smallBoxText">
-                  <h5>Title</h5>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Error in debitis!
+                  <h5 className="fs-3">Fruits</h5>
+                  <p className="lead fw-normal" style={{ color: "#736f72" }}>
+                    Handpicked, non-GMO, delicious fruits filled with juice!
                   </p>
                 </div>
               </div>
@@ -31,10 +28,10 @@ const Categories = () => {
                   className="img-fluid rounded-1"
                 />
                 <div className="smallBoxText">
-                  <h5>Title</h5>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Error in debitis!
+                  <h5 className="fs-3">Vegetables</h5>
+                  <p className="lead fw-normal" style={{ color: "#736f72" }}>
+                    Locally grown, all organic, seasonal vegetables. Guaranteed
+                    taste!
                   </p>
                 </div>
               </div>
@@ -45,10 +42,9 @@ const Categories = () => {
                   className="img-fluid rounded-1"
                 />
                 <div className="smallBoxText">
-                  <h5>Title</h5>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Error in debitis!
+                  <h5 className="fs-3">Beverages</h5>
+                  <p className="lead fw-normal" style={{ color: "#736f72" }}>
+                    Quench your thirst with teas, sodas, and more!
                   </p>
                 </div>
               </div>
@@ -59,10 +55,10 @@ const Categories = () => {
                   className="img-fluid rounded-1"
                 />
                 <div className="smallBoxText">
-                  <h5>Title</h5>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Error in debitis!
+                  <h5 className="fs-3">Sweets</h5>
+                  <p className="lead fw-normal" style={{ color: "#736f72" }}>
+                    Enjoy our freshly baked goods delivered right out of the
+                    oven!
                   </p>
                 </div>
               </div>
@@ -76,14 +72,15 @@ const Categories = () => {
                 className="img-fluid rounded-1"
               />
               <div className="bigBoxText">
-                <h5>Title 2</h5>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Error in debitis!
+                <h1 className="display-1 fw-bolder">Winter Sale!!!</h1>
+                <h5 className="lead">
+                  Checkout deals on a variety of fresh produce, spices, baked
+                  goods and more!
+                </h5>
+                <p className="fst-italic">
+                  **Up to <span className="fw-bold">50% OFF</span> on selected
+                  items**
                 </p>
-                <Link>
-                  <Button className="categoryBtn">Shop NOW</Button>
-                </Link>
               </div>
             </div>
           </div>

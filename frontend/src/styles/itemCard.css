@@ -9,6 +9,10 @@
   right: 10px;
 }
 
-.btnDesign {
+.btn {
   background-color: green;
+}
+
+.btn:hover {
+  background-color: #aad576;
 }

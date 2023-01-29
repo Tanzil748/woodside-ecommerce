@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
@@ -8,7 +7,7 @@ const Register = () => {
     <Container>
       <Form
         className="d-flex flex-column align-items-center justify-content-center"
-        style={{ minHeight: "calc(100vh - 160px)" }}
+        style={{ minHeight: "calc(100vh - 145px)" }}
       >
         <h1>Register Account</h1>
         <Form.Group className="mb-3" controlId="formBasicName">
@@ -23,9 +22,13 @@ const Register = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Button variant="primary" type="submit" className="mb-3">
+        <div
+          type="submit"
+          className="mb-3 btn"
+          style={{ backgroundColor: "#aad576" }}
+        >
           Sign Up
-        </Button>
+        </div>
         <p className="mb-0">Already have an account?</p>
         <a href="/signin">Sign In</a>
       </Form>

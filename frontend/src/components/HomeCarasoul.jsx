@@ -14,8 +14,13 @@ const HomeCarasoul = () => {
             alt="First slide"
           />
           <Carousel.Caption className="position-absolute top-50 start-50 translate-middle">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h1 className="fw-bolder " style={{ color: "#f7ebe1" }}>
+              Our Fresh Produce
+            </h1>
+            <p className="fw-bolder" style={{ color: "#f7ebe1" }}>
+              We obtain our produce and baked goods exclusively from farmers and
+              local bakeries.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carourselItem">
@@ -26,8 +31,13 @@ const HomeCarasoul = () => {
           />
 
           <Carousel.Caption className="position-absolute top-50 start-50 translate-middle">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1 className="fw-bolder " style={{ color: "#f4f4f6" }}>
+              Empowering Farmers
+            </h1>
+            <p className="fw-bolder" style={{ color: "#f4f4f6" }}>
+              Our business model prioritizes supporting local farmers and small
+              businesses.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carourselItem">
@@ -38,9 +48,11 @@ const HomeCarasoul = () => {
           />
 
           <Carousel.Caption className="position-absolute top-50 start-50 translate-middle">
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            <h1 className="fw-bolder " style={{ color: "#e9e3e6" }}>
+              Fair Prices
+            </h1>
+            <p className="fw-bolder" style={{ color: "#e9e3e6" }}>
+              We price match our 100% organic fruits and vegetables!
             </p>
           </Carousel.Caption>
         </Carousel.Item>

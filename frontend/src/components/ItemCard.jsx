@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import React from "react";
 import "../styles/itemCard.css";
 
@@ -16,7 +15,7 @@ const ItemCard = ({ img, name, price }) => {
           <p className="card-text">{name}</p>
         </div>
         <div className="buttonPosition">
-          <Button className="btnDesign">Add +</Button>
+          <div className="btn">Add +</div>
         </div>
       </div>
     </div>

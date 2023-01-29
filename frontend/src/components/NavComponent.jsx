@@ -16,7 +16,7 @@ const NavComponent = () => {
         <Nav className="me-auto my-2 my-lg-0"></Nav>
         <div className="d-flex gap-2 align-items-center">
           <NavDropdown
-            title={<FaUserCircle size={30} color={"#ffd000"} />}
+            title={<FaUserCircle size={30} color={"#ffef9f"} />}
             id="navbarScrollingDropdown"
           >
             <NavDropdown.Item href="/signin">Sign In</NavDropdown.Item>
@@ -24,8 +24,11 @@ const NavComponent = () => {
           </NavDropdown>
           <Nav.Link href="/cart">
             <button type="button" className="cartButton btn position-relative">
-              <BsCart4 size={20} color={"#ffd000"} />
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <BsCart4 size={20} color={"#ffef95"} />
+              <span
+                className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                style={{ backgroundColor: "#ff5d8f" }}
+              >
                 10
               </span>
             </button>

@@ -1,12 +1,12 @@
 .navComponent {
-  background-color: #008000;
-  border-bottom: 1px solid yellow;
+  background-color: #aad576;
+  border-bottom: 1px solid #ffef9f;
 }
 
 .title1 {
-  color: #ffd000;
+  color: #ffef9f;
 }
 
-.cartButton {
-  background-color: #343a40;
+.cartButton:hover {
+  background-color: #538d22;
 }
