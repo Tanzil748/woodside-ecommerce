@@ -5,10 +5,10 @@ import "../styles/pagination.css";
 
 const ItemSection = () => {
   const [data, setData] = useState([]);
+  const itemQuantity = 12; // how many items per page for pagination
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemQuantity, setitemQuantity] = useState(12); // how many items per page
 
   const lastItemIndex = currentPage * itemQuantity; //last item index of page
   const firstItemIndex = lastItemIndex - itemQuantity; // first item index of page
