@@ -1,0 +1,13 @@
+.paginationContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.paginationBtn {
+  background-color: #d0f4de;
+  font-weight: 900;
+  padding: 8px;
+  border-radius: 10%;
+  border: none;
+}

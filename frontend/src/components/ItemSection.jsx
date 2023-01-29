@@ -1,10 +1,20 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import ItemCard from "./ItemCard";
+import React, { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import Pagination from "./Pagination";
+import "../styles/pagination.css";
 
 const ItemSection = () => {
   const [data, setData] = useState([]);
 
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemQuantity, setitemQuantity] = useState(12); // how many items per page
+
+  const lastItemIndex = currentPage * itemQuantity; //last item index of page
+  const firstItemIndex = lastItemIndex - itemQuantity; // first item index of page
+  const currentPosts = data.slice(firstItemIndex, lastItemIndex); // slice from api array
+
+  //Api fetch call once when page loaded
   const apiCall = async () => {
     await fetch("http://localhost:5500/api/v1/items")
       .then((res) => res.json())
@@ -17,14 +27,13 @@ const ItemSection = () => {
 
   return (
     <div className="container-xxl py-2">
-      <div className="d-flex justify-content-center align-items-center">
-        <div className="row">
-          {data.map(({ img, name, price, _id }) => (
-            <div key={_id} className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <ItemCard img={img} price={price} name={name} />
-            </div>
-          ))}
-        </div>
+      <ItemList data={currentPosts} />
+      <div className="paginationContainer">
+        <Pagination
+          itemQuantity={itemQuantity}
+          setCurrentPage={setCurrentPage}
+          allItems={data.length}
+        />
       </div>
     </div>
   );
