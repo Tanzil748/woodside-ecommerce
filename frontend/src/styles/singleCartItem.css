@@ -1,0 +1,11 @@
+.imgContainer {
+  height: 200px;
+  width: 200px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
