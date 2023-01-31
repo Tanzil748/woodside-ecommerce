@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
+const jwt = require("jsonwebtoken");
 
 router.post("/register", async (req, res) => {
   const registeredUser = new User({
@@ -34,11 +35,20 @@ router.post("/signin", async (req, res) => {
     initialPassword !== req.body.password &&
       res.status(400).json("Incorrect password"); //error check
 
+    // jwt user access token
+    const accessToken = jwt.sign(
+      {
+        id: user._id,
+      },
+      process.env.JWT_Secret,
+      { expiresIn: "20min" }
+    );
+
     //   this destructures password out of mongo
     const { password, ...others } = user._doc; // _doc is where the user input is placed in mongo file
 
     // if both error checks pass, the user json will show
-    res.status(200).json(others);
+    res.status(200).json({ ...others, accessToken }); //merge others with accessToken under same object
   } catch (error) {
     res.status(500).json(error);
   }
