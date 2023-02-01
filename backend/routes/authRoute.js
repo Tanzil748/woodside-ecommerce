@@ -4,6 +4,7 @@ const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
 
+// when user registers account, their data is saved to db & password is encrypted
 router.post("/register", async (req, res) => {
   const registeredUser = new User({
     userName: req.body.userName,
@@ -23,6 +24,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// when user log in, db searches for email. if approved, password is decrypted and then user is given access token
 router.post("/signin", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -41,7 +43,7 @@ router.post("/signin", async (req, res) => {
         id: user._id,
       },
       process.env.JWT_Secret,
-      { expiresIn: "20min" }
+      { expiresIn: "1d" }
     );
 
     //   this destructures password out of mongo

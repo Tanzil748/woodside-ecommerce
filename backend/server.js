@@ -10,7 +10,6 @@ const connectMongo = require("./connect");
 // connect routes to server
 const itemsRoute = require("./routes/itemsRoute");
 const authRoute = require("./routes/authRoute");
-const userRoute = require("./routes/userRoute");
 
 // connect DB
 connectMongo();
@@ -22,6 +21,5 @@ app.use(express.json());
 // my api routes
 app.use("/api/v1/items", itemsRoute);
 app.use("/api/v1/auth", authRoute);
-app.use("api/v1/users", userRoute);
 
 app.listen(port, () => console.log(`Backend running on port ${port}`));
