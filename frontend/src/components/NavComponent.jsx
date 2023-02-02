@@ -5,8 +5,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BsCart4 } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const NavComponent = () => {
+  // store holds all reducers setup in store.js
+  const quantity = useSelector((store) => store.cart.quantity);
+
   return (
     <Navbar expand="lg" className="navComponent px-2 pt-3">
       <div className="container-xxl px-3">
@@ -29,7 +33,7 @@ const NavComponent = () => {
                 className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
                 style={{ backgroundColor: "#ff5d8f" }}
               >
-                10
+                {quantity}
               </span>
             </button>
           </Nav.Link>

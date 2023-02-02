@@ -1,23 +1,22 @@
 import React from "react";
 import "../styles/singleCartItem.css";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-const SingleCartItem = () => {
+const SingleCartItem = ({ ...item }) => {
   return (
     <div className="card mb-2">
       <div className="d-flex">
-        <img
-          src="https://images.unsplash.com/photo-1591735179859-a049994205de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-          alt="title"
-          className="imgContainer"
-        />
-        <div className="card-body">
-          <h3 className="card-title">Title</h3>
-          <p className="card-text">Price</p>
-          <div className="quantity">
-            <AiOutlineMinus size={20} />
-            <p>1</p>
-            <AiOutlinePlus size={20} />
+        <img src={item.img} alt={item.name} className="imgContainerSize" />
+        <div className="card-body position-relative">
+          <h3 className="card-title">{item.name}</h3>
+          <p className="card-text">{`$${item.price}`}</p>
+          <div className="quantityAdjustment position-absolute gap-3">
+            <button className="btn btn-sm" style={{ height: "30px" }}>
+              -
+            </button>
+            <p className="fw-bold">1</p>
+            <button className="btn btn-sm" style={{ height: "30px" }}>
+              +
+            </button>
           </div>
         </div>
       </div>

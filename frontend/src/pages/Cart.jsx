@@ -1,20 +1,36 @@
 import React from "react";
 import SingleCartItem from "../components/SingleCartItem";
-import TotalItemDetail from "../components/TotalItemDetail";
+import "../styles/cart.css";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const { cartItems, quantity, total } = useSelector((store) => store.cart);
+
+  // cart quantity
+  if (quantity < 1) {
+    return (
+      <div className="emptyCart pt-5">
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <div className="lead fw-bolder">Cart is Empty</div>
+          <p>Please add items to get order details</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="container-xxl py-2">
-      <div className="row d-flex flex-wrap-reverse">
-        <div className="col-6 col-md-8">
-          {/* single item cart */}
-          <SingleCartItem />
-          <SingleCartItem />
-        </div>
-        <div className="col-6 col-md-4">
-          {/* checkout detail */}
-          <TotalItemDetail />
-        </div>
+    <div className="container-lg py-2">
+      <div>
+        {cartItems.map((item) => (
+          <div key={item.name}>
+            <SingleCartItem {...item} />
+          </div>
+        ))}
+      </div>
+      <hr />
+      <div className="d-flex justify-content-between px-1">
+        <div className="lead fw-bolder">Total</div>
+        <div className="lead fw-bolder">{`$${total}`}</div>
       </div>
     </div>
   );
