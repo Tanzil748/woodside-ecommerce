@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Register, SignIn, Home, SingleProduct, Cart } from "./pages/index";
 import RootLayout from "./layouts/RootLayout";
+import { useDispatch, useSelector } from "react-redux";
+import { calcTotals } from "./redux/cartSlice";
 
 const App = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(calcTotals());
+  }, [cartItems]);
   return (
     <BrowserRouter>
       <Routes>

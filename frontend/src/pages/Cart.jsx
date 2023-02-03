@@ -28,7 +28,7 @@ const Cart = () => {
       <hr />
       <div className="d-flex justify-content-between px-1">
         <div className="lead fw-bolder">Total</div>
-        <div className="lead fw-bolder">{`$${totalPrice}`}</div>
+        <div className="lead fw-bolder">{`$${totalPrice.toFixed(2)}`}</div>
       </div>
     </div>
   );
