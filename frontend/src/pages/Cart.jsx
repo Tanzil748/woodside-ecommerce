@@ -4,10 +4,10 @@ import "../styles/cart.css";
 import { useSelector } from "react-redux";
 
 const Cart = () => {
-  const { cartItems, quantity, total } = useSelector((store) => store.cart);
+  const { cartItems, amount, totalPrice } = useSelector((store) => store.cart);
 
   // cart quantity
-  if (quantity < 1) {
+  if (amount < 1) {
     return (
       <div className="emptyCart pt-5">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -22,15 +22,13 @@ const Cart = () => {
     <div className="container-lg py-2">
       <div>
         {cartItems.map((item) => (
-          <div key={item.name}>
-            <SingleCartItem {...item} />
-          </div>
+          <SingleCartItem key={item.id} {...item} />
         ))}
       </div>
       <hr />
       <div className="d-flex justify-content-between px-1">
         <div className="lead fw-bolder">Total</div>
-        <div className="lead fw-bolder">{`$${total}`}</div>
+        <div className="lead fw-bolder">{`$${totalPrice}`}</div>
       </div>
     </div>
   );
