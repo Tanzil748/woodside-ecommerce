@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const NavComponent = () => {
   // store holds all reducers setup in store.js
-  const amount = useSelector((store) => store.cart.amount);
+  const cartItemQuantity = useSelector((store) => store.cart.cartItemQuantity);
 
   return (
     <Navbar expand="lg" className="navComponent px-2 pt-3">
@@ -33,7 +33,7 @@ const NavComponent = () => {
                 className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
                 style={{ backgroundColor: "#ff5d8f" }}
               >
-                {amount}
+                {cartItemQuantity}
               </span>
             </button>
           </Nav.Link>

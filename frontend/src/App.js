@@ -3,17 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Register, SignIn, Home, SingleProduct, Cart } from "./pages/index";
 import RootLayout from "./layouts/RootLayout";
-import { useDispatch, useSelector } from "react-redux";
-import { calcTotals } from "./redux/cartSlice";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { getTotals } from "./redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const App = () => {
-  const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cart);
   useEffect(() => {
-    dispatch(calcTotals());
-  }, [cartItems]);
+    dispatch(getTotals());
+  }, [cartItems, dispatch]);
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route path="/register" element={<Register />} />

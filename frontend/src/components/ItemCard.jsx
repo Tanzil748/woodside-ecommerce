@@ -1,7 +1,14 @@
 import React from "react";
 import "../styles/itemCard.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
-const ItemCard = ({ img, name, price }) => {
+const ItemCard = ({ img, name, price, _id }) => {
+  const dispatch = useDispatch();
+  const clickHandler = ({ img, name, price, _id }) => {
+    console.log("clicked");
+    dispatch(addToCart({ img, name, price, _id }));
+  };
   return (
     <div>
       <div className="card mb-2 h-100">
@@ -15,7 +22,12 @@ const ItemCard = ({ img, name, price }) => {
           <p className="card-text">{name}</p>
         </div>
         <div className="buttonPosition">
-          <div className="btn">Add +</div>
+          <div
+            className="btn"
+            onClick={() => clickHandler({ img, name, price, _id })}
+          >
+            Add +
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
-.emptyCart {
+.emptyCart,
+.filledCart {
   min-height: calc(100vh - 140px);
 }

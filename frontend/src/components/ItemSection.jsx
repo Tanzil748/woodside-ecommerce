@@ -10,13 +10,13 @@ const ItemSection = () => {
       {isLoading ? (
         <p>Data loading...</p>
       ) : error ? (
-        <p>Error occured</p>
+        <p>Error occurred</p>
       ) : (
         <div>
           <div className="row">
             {data.map(({ img, name, price, _id }) => (
               <div key={_id} className="col-6 col-sm-4 col-md-3 col-lg-2">
-                <ItemCard img={img} price={price} name={name} />
+                <ItemCard img={img} price={price} name={name} _id={_id} />
               </div>
             ))}
           </div>
