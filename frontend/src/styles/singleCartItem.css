@@ -1,4 +1,25 @@
 .imgContainerSize {
-  height: 10rem;
-  width: 10rem;
+  height: 6rem;
+  width: 6rem;
+}
+
+.cartImageBox {
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+}
+
+.cartQuantityBox {
+  padding-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: red;
+  padding-left: 0;
 }

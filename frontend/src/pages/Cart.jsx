@@ -3,13 +3,14 @@ import SingleCartItem from "../components/SingleCartItem";
 import "../styles/cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
+import { BsTrash } from "react-icons/bs";
 
 const Cart = () => {
   const { cartItems, totalPrice } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
   return (
-    <div className="container-lg py-2">
+    <div className="container-xxl py-2 px-0">
       {/* check if empty or not */}
       {cartItems.length === 0 ? (
         <div className="emptyCart pt-5">
@@ -19,24 +20,25 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="container-lg py-2 filledCart">
+        <div className="container-xxl py-2 filledCart">
           <h1 className="d-flex justify-content-center display-5">
             Order Review
           </h1>
-          <div className="row">
-            <h3 className="col-5 fw-normal">Item</h3>
-            <h3 className="col-3 fw-normal">Price</h3>
-            <h3 className="col-4 fw-normal">Quantity</h3>
+          <div className="row mb-2" style={{ backgroundColor: "#aad576" }}>
+            <h3 className="col-8 ps-3">Item</h3>
+            <h3 className="col-4 d-flex justify-content-center">Quantity</h3>
           </div>
           <div>
             {cartItems.map((item) => (
               <SingleCartItem key={item._id} {...item} />
             ))}
           </div>
-          <hr />
-          <div className="d-flex justify-content-between px-1">
-            <button onClick={() => dispatch(clearCart({ cartItems }))}>
-              Empty Cart
+          <div className="d-flex justify-content-between">
+            <button
+              className="btn bg-danger fw-bolder"
+              onClick={() => dispatch(clearCart({ cartItems }))}
+            >
+              Empty Cart <BsTrash />
             </button>
             <div className="lead fw-bolder">{`Total: $${totalPrice.toFixed(
               2
